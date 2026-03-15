@@ -1,73 +1,93 @@
-# React + TypeScript + Vite
+E-COMMERCE DELIVERY (AMAZON DELIVERY PARTNER):
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. Persona: 
+TARGET USER : Amazon Delivery Partner
+Name: Ramesh Kumar
+Age: 28
+Location: Hyderabad, India
+Occupation: Amazon Last-Mile Delivery Partner
+Vehicle: Motorbike
+Background:
+Ramesh works as an Amazon delivery partner who delivers packages to customers in his assigned area. He works around 8–10 hours daily and completes about 30–40 deliveries per day.
+Income:
+His earnings depend on the number of deliveries he completes and usually range between ₹700–₹1000 per day.
+Challenges:
+External disruptions such as heavy rain, floods, extreme heat, pollution, or local restrictions can stop deliveries. When this happens, Ramesh cannot work and loses his daily income.
+Need:
+Ramesh needs a simple and affordable income protection system that provides compensation when external disruptions prevent him from delivering packages.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+2. Problem Statement
+Amazon delivery partners depend on daily deliveries for income.
+However, external disruptions such as heavy rain, floods, extreme heat, severe pollution, or local restrictions can stop deliveries and reduce their working hours. 
+When such events occur, delivery workers lose a significant portion of their income and currently have no financial protection.
+Our solution is an AI-powered parametric insurance platform that provides automatic compensation for income loss caused by these external disruptions.
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+3. Weekly Premium Model
+The platform follows a weekly pricing model that matches the earning cycle of gig workers. Delivery partners pay a small weekly premium based on the risk level of their delivery zone.
+Example pricing model:
+Risk Level	Weekly Premium	Income Coverage
+Low Risk	₹10/week	₹300 protection
+Medium Risk	₹20/week	₹600 protection
+High Risk	₹30/week	₹1000 protection
+The premium is dynamically adjusted using AI risk prediction.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+4. Parametric Triggers
+The system automatically triggers claims when predefined environmental conditions occur. These triggers are based on external data sources.
+Example triggers:
+Heavy rainfall above a threshold (e.g., >50 mm)
+Extreme temperature (>40°C)
+Severe air pollution (AQI >300)
+Local curfew or road closures
+When these conditions are detected, the system automatically activates income protection without requiring manual claims.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+5. Platform Choice
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The platform will be developed as a Mobile-First Web Application.
+Reason:
+Delivery partners primarily use smartphones during work.
+Mobile-friendly web access allows easy registration, plan selection, and claim notifications without installing a separate app.
+It ensures accessibility and simplicity for gig workers.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+6. AI / ML Integration Plan
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+AI and machine learning will be integrated into the platform in the following ways:
+1.Risk Prediction
+Machine learning models analyze historical weather and disruption data to estimate the probability of income loss in a specific delivery zone.
+2.Dynamic Premium Calculation
+AI adjusts weekly premium prices based on predicted risk levels for each worker's location.
+3.Fraud Detection
+AI detects suspicious activities such as location spoofing, duplicate claims, or claims made during non-disruption periods.
+4.Automated Claim Processing
+AI monitors disruption triggers using external APIs and automatically initiates payouts when conditions are met.
+
+7. System workflow
+
+The delivery worker registers on the platform.
+The worker selects a weekly income protection plan.
+AI calculates the premium based on location and risk data.
+The worker pays the weekly premium.
+The system continuously monitors disruption triggers using APIs.
+When a disruption occurs, the system automatically triggers a claim.
+The worker receives compensation for lost income.
+
+
+8. Tech Stack
+Frontend: React
+Used to build a responsive and user-friendly interface for delivery workers.
+Backend: Node.js
+Handles authentication, insurance policy management, risk analysis integration, and claim processing.
+Database: MySQL
+Stores user data, policy details, disruption records, and claim transactions.
+APIs  
+Weather API  
+Traffic API
+AI/ML  
+Python (Scikit-learn)
+Payments  
+Razorpay Test Mode
+
